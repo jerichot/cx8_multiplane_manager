@@ -172,49 +172,49 @@ Throughout the run, detailed information is written to `master.log` and `smi_ass
 ### 1. Basic: Ensure SMI devices for all ConnectX-8 cards
 
 ```bash
-sudo ./cx8_smi_opensm_mgr.sh
+sudo ./cx8_multiplane_manager.sh
 ```
 
 ### 2. Show SMI status only (no modification)
 
 ```bash
-sudo ./cx8_smi_opensm_mgr.sh --smi-status
+sudo ./cx8_multiplane_manager.sh --smi-status
 ```
 
 ### 3. Recreate all SMIs and show status
 
 ```bash
-sudo ./cx8_smi_opensm_mgr.sh --recreate-smi --smi-status
+sudo ./cx8_multiplane_manager.sh --recreate-smi --smi-status
 ```
 
 ### 4. Interactively delete selected SMIs
 
 ```bash
-sudo ./cx8_smi_opensm_mgr.sh --select-smi
+sudo ./cx8_multiplane_manager.sh --select-smi
 ```
 
 ### 5. Ensure SMIs and run OpenSM (strict Active requirement)
 
 ```bash
-sudo ./cx8_smi_opensm_mgr.sh --run-opensm
+sudo ./cx8_multiplane_manager.sh --run-opensm
 ```
 
 ### 6. Run OpenSM but allow non-Active ports (warning only)
 
 ```bash
-sudo ./cx8_smi_opensm_mgr.sh --run-opensm --no-require-active
+sudo ./cx8_multiplane_manager.sh --run-opensm --no-require-active
 ```
 
 ### 7. Full flow: recreate SMIs, run OpenSM, and show status
 
 ```bash
-sudo ./cx8_smi_opensm_mgr.sh --recreate-smi --run-opensm --smi-status
+sudo ./cx8_multiplane_manager.sh --recreate-smi --run-opensm --smi-status
 ```
 
 ### 8. Safe “dry run” scenario (no changes)
 
 ```bash
-sudo ./cx8_smi_opensm_mgr.sh --recreate-smi --run-opensm --smi-status --dry-run
+sudo ./cx8_multiplane_manager.sh --recreate-smi --run-opensm --smi-status --dry-run
 ```
 
 ---
