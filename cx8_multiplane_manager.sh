@@ -651,7 +651,7 @@ else
     echo "    Ports: ${PORT_LIST[*]}"
 
     echo "  - Verifying ports are Active ..."
-    if ! check_ports_active("$smi" "${PORT_LIST[@]}"); then
+    if ! check_ports_active "$smi" "${PORT_LIST[@]}"; then
       if [[ "$REQUIRE_ACTIVE" == "yes" ]]; then
         log "[OpenSM][ERROR] One or more ports on $smi are not Active (REQUIRE_ACTIVE=yes)."
         echo "    !! One or more ports on $smi are not Active"
