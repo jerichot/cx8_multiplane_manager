@@ -13,15 +13,15 @@ This tool is designed for IB/RDMA lab environments where you frequently bring up
 
 ## Description
 
-`cx8_smi_opensm_mgr.sh` is a single Bash tool that combines and extends two common workflows:
+`cx8_multiplane_manager.sh` is a single Bash tool that combines and extends two common workflows:
 
-1. **SMI Manager (from `cx8_smi_mgr.sh`)**  
+1. **SMI Manager**  
    - Detects all ConnectX-8 devices from `mst status -v`  
    - Ensures **one SMI device per ConnectX-8 mlx5_N**, named `smiN`  
    - Supports deletion / recreation of existing SMI devices  
    - Prints a status table of SMI devices (parent + per-port `ibstat` state)
 
-2. **OpenSM Runner (from `run_opensm_on_smis.sh`)**  
+2. **OpenSM Runner**  
    - For each SMI device, finds its Port GUID and launches **one `opensm` daemon per GUID**  
    - Verifies that all SMI ports are in **Active** state (configurable strictness)  
    - Writes OpenSM logs to a dedicated, timestamped directory
@@ -59,7 +59,7 @@ On top of that, this combined version adds **structured logging** for all phases
 All runs create a **timestamped log directory**:
 
 ```text
-cx8_smi_opensm_mgr_YYYYmmdd-HHMMSS/
+cx8_multiplane_manager_YYYYmmdd-HHMMSS/
   master.log          # All phases, decisions, and command results
   smi_assign.log      # Detailed ConnectX-8 → SMI mapping and creation
   opensm_smi_<GUID>.log  # One per OpenSM instance
@@ -102,7 +102,7 @@ mst start
 ## Usage
 
 ```bash
-sudo ./cx8_smi_opensm_mgr.sh [OPTIONS]
+sudo ./cx8_multiplane_manager.sh [OPTIONS]
 ```
 
 ### Options
